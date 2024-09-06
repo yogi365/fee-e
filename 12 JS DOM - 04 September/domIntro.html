@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p align="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti inventore pariatur soluta rerum laudantium recusandae beatae! Accusamus doloremque reiciendis maiores sit fugiat cumque dolores necessitatibus perspiciatis iusto autem, qui assumenda.</p> -->
+     <p id="para1">Para 1</p>
+     <p class="para">Para 2</p>
+     <p>Para 3</p>
+     <div class="para">
+        <p>Para 4</p>
+        <p>Para 5</p>
+     </div>
+
+     <script>
+        // const p = document.getElementById('para1');
+
+        // const p =document.getElementsByClassName('para')
+        // const p = document.getElementsByTagName('p');
+        // const  p = document.querySelectorAll('.para')
+        // console.log(p);
+        // console.log(p[0]);
+        // console.log(p[1])
+
+        const collection = document.getElementsByTagName('p');
+        const list = document.querySelectorAll('p');
+
+        console.log('--Before--')
+        console.log(collection);
+        console.log(list);
+
+        const p = document.createElement('p');
+        p.innerText= " New Para Created dynamically";
+        document.body.append(p);
+
+        console.log('--After--')
+        console.log(collection);
+        console.log(list);
+        
+     </script>
+</body>
+</html>
