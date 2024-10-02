@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input onchange = "changeLable()" type="text" id="txtName"/> -->
+    <!-- <input onkeypress = "changeLable()" type="text" id="txtName"/> -->
+    <!-- <input onkeyup = "changeLable()" type="text" id="txtName"/> -->
+    <!-- <input oninput = "changeLable()" type="text" id="txtName"/> -->
+    <!-- <button onclick="changeLable()">Click</button> -->
+    <input oninput="changeLable(event)" type="text" id="txtName"/>
+    <button>Click</button>
+    <br/>
+    <hr/>
+    <lable id="lblName">This is a lable</lable>
+    <script>
+        function changeLable(ev){
+            console.log(ev);
+            var txt = document.querySelector('#txtName');
+            var lblName = document.querySelector('#lblName');
+            lblName.innerText  = txt.value;
+        }
+
+        const btn = document.querySelector('button');
+        // btn.onclick = function(){
+        //     var txt = document.querySelector('#txtName');
+        //     var lblName = document.querySelector('#lblName');
+        //     lblName.innerText  = txt.value;
+        // };
+
+        // btn.addEventListener('click',changeLable);
+        
+    </script>
+</body>
+</html>

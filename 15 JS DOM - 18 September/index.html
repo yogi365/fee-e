@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para{
+            font-size:24px;
+            color:red;
+        }
+    </style>
+</head>
+<body>   
+    <div>
+
+    </div>
+    <p>Static Paragraph</p>
+    <script>
+        // const p = document.createElement('p');
+        // p.innerText = "This is a paragraph";
+        // p.id="para1";
+        // p.classList.add("para");
+        // document.body.append(p)
+        // document.body.prepend(p)
+        // document.querySelector('body').appendChild(p);
+
+        const ul = document.createElement('ul');
+        for(let i=0;i<10;i++){
+            const li = document.createElement('li');
+            li.innerText = i ;
+            ul.append(li);
+        }
+        document.querySelector('div').append(ul);
+    </script>
+</body>
+</html>

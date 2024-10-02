@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgcolor{
+            background-color: red;
+        }
+        /* rgb(109,26,189) */
+    </style>
+</head>
+
+<body>
+    <h3>Task2: Change the background color of paragraph which is clicked.</h3>
+    <div>
+        <p>This is a paragraph 1</p>
+        <p>This is a paragraph 2</p>
+        <p>This is a paragraph 3</p>
+        <p>This is a paragraph 4</p>
+        <p>This is a paragraph 5</p>
+    </div>
+    <script>
+        const p =document.querySelectorAll('p');
+        p.forEach(ele=>{
+            ele.addEventListener('click',(e)=>{
+                // ele.style.backgroundColor="red";
+                // e.target.style.backgroundColor="red";
+                e.target.classList.toggle('bgcolor');
+            })
+        })
+    </script>
+</body>
+
+</html>

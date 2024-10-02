@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txtName"/>
+    <button>Click</button>
+    <br>
+    <label>Name</label>
+
+    <script>
+        // document.querySelector('label').innerText = sessionStorage.getItem('name')       
+        // document.querySelector('button').addEventListener('click',function(){
+        //     const txtName = document.querySelector('#txtName');
+        //     sessionStorage.setItem('name',txtName.value);
+        // })
+
+        document.querySelector('label').innerText = localStorage.getItem('name')       
+        document.querySelector('button').addEventListener('click',function(){
+            const txtName = document.querySelector('#txtName');
+            localStorage.setItem('name',txtName.value);
+        })
+    </script>
+    
+</html>

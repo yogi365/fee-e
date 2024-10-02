@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      .para{
+         background-color: blue;
+         color:red;
+         font-size:24px;
+         font-weight: 600;
+      }
+    </style>
+</head>
+<body>
+    <!-- <p align="center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti inventore pariatur soluta rerum laudantium recusandae beatae! Accusamus doloremque reiciendis maiores sit fugiat cumque dolores necessitatibus perspiciatis iusto autem, qui assumenda.</p> -->
+     <p id="para1">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p> 
+
+     <script>
+        const p = document.getElementById('para1');
+      //   p.innerText = "<strong>Dynamically added text</strong>"
+      // p.innerHTML = "<strong>Dynamically added text</strong>"
+            // console.dir(p);
+      
+      // p.style="background-color:red; color:white";
+      // p.style.border= "5px dashed green"
+      // p.style.backgroundColor="red";
+
+      // p.classList = "para";
+      // p.setAttribute("class","para")
+      var a = p.getAttribute('id');
+      console.log(a)
+
+        
+     </script>
+</body>
+</html>
