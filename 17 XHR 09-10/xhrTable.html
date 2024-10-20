@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Fetch</button>
+    <table>
+
+    </table>
+    <script>
+        document.querySelector('button').addEventListener("click",function(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('get','https://feecq.github.io/api/movies.json',false);
+            xhr.responseType="application/json";
+            xhr.send();
+            let movies = JSON.parse(xhr.response);
+            console.log(movies)
+            movies.forEach(movie=>{
+                const tr = document.createElement('tr');
+                for(keys in movie){
+                    const td = document.createElement('td');
+                    td.innerText = movie[keys];
+                    tr.append(td);
+                }
+                document.querySelector('table').append(tr);
+            })
+            // console.log(movies)
+        })
+
+
+    </script>
+</body>
+</html>

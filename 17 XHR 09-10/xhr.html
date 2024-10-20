@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height:800px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const xhr = new XMLHttpRequest();
+        // xhr.open("get",'https://feecq.github.io/api/users.json',true)
+        xhr.open("get","https://files.catbox.moe/mre3t1.JPG",true)
+        // xhr.responseType="json";
+        xhr.responseType="blob";
+        xhr.send();
+        // console.log(xhr.responseText);
+        xhr.onerror = function(){
+            // if there is some error
+        }
+
+        xhr.onprogress = function(e){
+            //continuesly fire 
+            //progress bar
+            console.log(e);
+        }
+
+        xhr.onload = function(){
+            // console.log(JSON.parse(xhr.responseText));
+            // console.log(xhr.response)
+            const url = URL.createObjectURL(xhr.response);
+            // console.log(url)
+            const img = document.createElement('img');
+            img.src = url;
+            document.body.append(img)
+        }
+
+        xhr.onreadystatechange = function(){
+            
+        }
+
+    </script>
+
+</body>
+</html>
