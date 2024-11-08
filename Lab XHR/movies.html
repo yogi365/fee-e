@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="inputContainer">
+            <input type="text" id="txtRating"/>
+            <button onclick="searchMoviesBasedOnRating()">Search</button>
+    </div>
+    <div class="movieContainer">
+        
+    </div>
+    <script>
+        var movies = [];
+
+        function fetchData(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('get',"https://feecq.github.io/api/movies.json",false);
+            xhr.send();
+            movies = JSON.parse(xhr.response);
+            movies.forEach(movie=>{
+                moviesCard(movie)
+            })
+        }
+
+        function moviesCard(movie){
+            const div = document.createElement('div');
+            const h3 = document.createElement('h3');
+            const img = document.createElement('img');
+            const p = document.createElement('p');
+            h3.innerText=movie.movie;
+            img.src = movie.image;
+            p.innerText = "Rating: "+movie.rating;
+            div.append(img,h3,p);
+            document.querySelector('.movieContainer').append(div);
+        }
+        function searchMoviesBasedOnRating(){
+            const rating = document.querySelector('#txtRating').value;
+            if(rating.value=="") return;
+            var tempArray = movies.filter(movie=>movie.rating==rating);
+            document.querySelector('.movieContainer').innerHTML="";
+            tempArray.forEach(movie=>moviesCard(movie))
+        }
+        window.onload = fetchData;
+    </script>
+
+</body>
+</html>
